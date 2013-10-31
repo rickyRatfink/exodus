@@ -49,6 +49,7 @@
 %>
 
 <% if ("error".equals(display)) { %>
+<logic:messagesPresent>
 <table width="437" cellpadding="0" cellspacing="0" border="0">
 		<tr>
 			<td width="437" height="66" background="<%=request.getContextPath()%>/images/error_header.jpg"></td>

@@ -27,7 +27,7 @@
 							<img src="<%=request.getContextPath()%>/images/bullet.png"/><a href="<%=request.getContextPath()%>/Intake.do?action=personal" style="text-decoration:none;">Personal</a></br>
 							<img src="<%=request.getContextPath()%>/images/bullet.png"/><a href="<%=request.getContextPath()%>/Intake.do?action=religious" style="text-decoration:none;">Spiritual</a></br>
 							<img src="<%=request.getContextPath()%>/images/bullet.png"/><a href="<%=request.getContextPath()%>/Intake.do?action=substance" style="text-decoration:none;">Substance</a></br>
-							<img src="<%=request.getContextPath()%>/images/bullet.png"/><a href="<%=request.getContextPath()%>/Intake.do?action=medical" style="text-decoration:none;">Medical</a></br>
+							<img src="<%=request.getContextPath()%>/images/bullet.png"/><a href="<%=request.getContextPath()%>/Intake.do?action=health" style="text-decoration:none;">Medical</a></br>
 							<img src="<%=request.getContextPath()%>/images/bullet.png"/><a href="<%=request.getContextPath()%>/Intake.do?action=legal" style="text-decoration:none;">Legal</a></br>
 							<img src="<%=request.getContextPath()%>/images/bullet.png"/><a href="<%=request.getContextPath()%>/Intake.do?action=accounting" style="text-decoration:none;">Accounting</a></br>
 							<img src="<%=request.getContextPath()%>/images/bullet.png"/><a href="<%=request.getContextPath()%>/Intake.do?action=visitation" style="text-decoration:none;">Visitation</a></br>

@@ -22,6 +22,7 @@ import org.apache.struts.action.ActionMapping;
 import org.apache.struts.upload.FormFile;
 
 import com.yada180.sms.application.Constants;
+import com.yada180.sms.domain.ErrorMessage;
 import com.yada180.sms.domain.Intake;
 import com.yada180.sms.domain.IntakeJobSkill;
 import com.yada180.sms.domain.IntakeMedicalCondition;
@@ -112,6 +113,15 @@ public class IntakeAction extends Action {
 			 String status=intakeForm.getProgramStatus();
 			 
 			 List intakeList = intakeDao.search(entryDate, exitDate, lastname,firstname,ssn,dob,farm,ged,archived,status);
+			 
+			 if (intakeList.size()>200) {
+				 	List<ErrorMessage> messages = new ArrayList<ErrorMessage>();
+				    intakeForm.setMessageType("info");
+					messages.add(new ErrorMessage("Your seach returned more than 200 results.  Please narrow your seach.",""));
+					intakeForm.setMessages(messages);
+					request.setAttribute("notifications", "info");
+					return mapping.findForward(Constants.SEARCH);
+			 }
 			 intakeForm.setIntakeList(intakeList);
 			 
 			 return mapping.findForward(Constants.RESULTS);

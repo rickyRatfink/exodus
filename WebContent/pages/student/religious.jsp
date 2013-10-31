@@ -100,7 +100,7 @@ function isNumberKey(evt)
 		<input type="submit" name="action" value="Print" class="button" title="Save" />
 	</div>   			
      
-    <html:hidden property="pageSource" value="personal"/>  
+    <html:hidden property="pageSource" value="religious"/>  
       
      </br></br>
      </br></br>

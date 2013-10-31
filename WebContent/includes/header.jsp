@@ -102,6 +102,7 @@ else {
 <tr>
 <td width="800">
 <ul class="menu">
+	<li><a href="<%=request.getContextPath()%>/Intake.do?action=Home" style="text-decoration:none;">Home</a></li>
 	<li><a href="#" onclick="toggleVisibility('Applications');">Applications</a></li>
 	<li><a href="#" onclick="toggleVisibility('Residents');">Residents</a></li>
 	<li><a href="#" onclick="toggleVisibility('Reports');">Reports</a></li>

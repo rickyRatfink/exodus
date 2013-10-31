@@ -2,20 +2,70 @@
 <%@ taglib uri="http://struts.apache.org/tags-html" prefix="html" %>
 <%@ taglib uri="http://struts.apache.org/tags-logic" prefix="logic" %>
 
-<jsp:include page="../../includes/header_info.jsp" flush="true"/>
+<%@ page import="java.util.ArrayList" %>
 
-<html:form method="POST" action="/Intake">
+<jsp:include page="../../includes/header.jsp" flush="true"/>
 
-    <table width="750">
+<script language="javascript" type="text/javascript">
+function ucase(obj) {
+  obj.value=obj.value.toUpperCase();
+}
+
+function isNumberKey(evt)
+      {
+         var charCode = (evt.which) ? evt.which : event.keyCode
+         if (charCode > 31 && (charCode < 48 || charCode > 57))
+            return false;
+
+         return true;
+      }
+	  
+
+</script>
+
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
 	<tr>
-		<td colspan="8"><b>Substance Abuse Information: </b><br /><br /></td>
+		<td class="mainBkgr">
+			<jsp:include page="../../includes/menu.jsp" flush="true"/>
+		</td>
+
+
+<script language="javascript">
+	toggleVisibility('Residents');
+</script>
+
+<td width="100%" align="left" valign="top" class="mainBkgr" >
+			<div id="boxContent"> 
+				<div id="breadcrumb">
+					&nbsp;&nbsp;Home > Residents > Substance Abuse Information
+				</div>
+
+				
+        <html:form action="/Intake">
+        
+  <div class="styledForm">
+        
+    <table width="600" cellpadding="0" cellspacing="0" border="0">
+	<tr>
+		<td class="header1">Substance Abuse Information</td>
 	</tr>
-
 	<tr>
+		<td class="instructions">
+			<bean:write name="intakeForm" property="intake.firstname"/>&nbsp;<bean:write name="intakeForm" property="intake.lastname"/>
+			/&nbsp;<bean:write name="intakeForm" property="intake.ssn"/> 
+		</td>
+	</tr>
+	</table>
+    
+     <table width="900" border="0" cellpadding="0" cellspacing="0">
+	
+    <tr>
 		<td colspan="11">
     		<jsp:include page="../../includes/messages.jsp" flush="true"/>
 	   </td>
 	</tr>
+
+	   	   <table width="900" border="0" cellpadding="0" cellspacing="0">
 	
 	<tr>
 		<td colspan="11"><b>Chemical Dependency (Answer all that apply):</b></td>
@@ -220,21 +270,28 @@
             	<html:text property="intake.quantity2Years" size="25" maxlength="25" />
             </td>
          </tr>
-    
-
-
-
-
-     <tr>
-		<td colspan="8" valign="bottom" align="center" height="45">   
-   		 	<input type="submit" name="action" value="Save" class="imageButtonSave" title="Save Information" />&nbsp;
-   		</td>
-	</tr>
     </table>
-  <html:hidden property="pageSource" value="substance"/>     
-</html:form>
 
-<br /><br />
+</br></br>
+     
+    <div align="left">
+		<input type="submit" name="action" value="Save" class="button" title="Save" />
+		<input type="submit" name="action" value="Print Card" class="button" title="Save" />
+		<input type="submit" name="action" value="Print" class="button" title="Save" />
+	</div>   			
+     
+    <html:hidden property="pageSource" value="substance"/>  
+      
+     </br></br>
+     </br></br>
+</html:form>
+      
+    </div>
+   
+   </td>
+   </tr>
+   </table>
    
 </body>
 </html>
+    
